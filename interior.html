@@ -88,7 +88,7 @@
     <script>
         const endpoint = "https://spreadsheets.google.com/feeds/list/1bzIQBLs8Mo3pBGwl4HYI-KxXMqAFf4WwoNaNOwZ5d6M/od6/public/values?alt=json";
 
-        let item = [];
+        let varer = [];
 
         let filter = "alle";
 
@@ -104,7 +104,7 @@
             const response = await fetch(endpoint);
             console.log(response);
             menu = await response.json();
-            console.log(item);
+            console.log(varer);
 
             visItems();
         }
@@ -115,10 +115,30 @@
 
             listevisning.innerHTML = "";
 
+            varer.feed.entry.forEach(ting => {
+                if (filter == "alle" || filter == ting.gsx$underkategori.$t) {
 
+
+                    let klon = template.cloneNode(true).content;
+
+                    klon.querySelector("img").src = "img/interior/" + ting.gsx$billede1.$t + "_1.jpg";
+                    klon.querySelector("img").alt = "billede af" + ting.gsx$navn.$t;
+
+                    klon.querySelector("#navn").textContent = ting.gsx$navn.$t;
+                    klon.querySelector("#pris").textContent = ting.gsx$pris.$t;
+                    klon.querySelector("#status").textContent = ting.gsx$status.$t;
+                    klon.querySelector("#alleItems").addEventListener("click", () => {
+                        location.href = "detalje.html?id=" + ting.gsx$id.$t;
+                    });
+
+                    listevisning.appendChild(klon);
+
+                }
+            })
 
 
         }
+
 
         function filterButtons() {
 
