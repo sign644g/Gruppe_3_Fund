@@ -158,6 +158,11 @@ article {
     object-fit: cover;
 }
 
+.valgt {
+    background-color: #937AB5;
+    color: white;
+}
+
 
 /*#alleItems img:hover {
     z-index: 1;

@@ -48,13 +48,13 @@
 
     <nav id="filter_menu">
         <button class="filter valgt" data-kategori="alle">Alle</button>
-        <button class="filter" data-underkategori="skaale">Skåle</button>
-        <button class="filter" data-underkategori="vaser">Vaser</button>
-        <button class="filter" data-underkategori="opbevaring">Opbevaring</button>
-        <button class="filter" data-underkategori="lamper">Lamper</button>
-        <button class="filter" data-underkategori="nips">Nips</button>
-        <button class="filter" data-underkategori="lysestager">Lysestager</button>
-        <button class="filter" data-underkategori="krukker">Krukker</button>
+        <button class="filter" data-kategori="skaale">Skåle</button>
+        <button class="filter" data-kategori="vaser">Vaser</button>
+        <button class="filter" data-kategori="opbevaring">Opbevaring</button>
+        <button class="filter" data-kategori="lamper">Lamper</button>
+        <button class="filter" data-kategori="nips">Nips</button>
+        <button class="filter" data-kategori="lysestager">Lysestager</button>
+        <button class="filter" data-kategori="krukker">Krukker</button>
     </nav>
     <h1></h1>
 
@@ -149,7 +149,6 @@
 
         function filtrering() {
             filter = this.dataset.kategori;
-            document.querySelector("h1").textContent = this.textContent;
             document.querySelectorAll(".filter").forEach(elm => {
                 elm.classList.remove("valgt");
             })
