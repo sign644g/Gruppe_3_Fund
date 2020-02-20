@@ -48,16 +48,42 @@
     </header>
 
     <section id="splash">
+        <img name="slide">
     </section>
 
     <script>
         //        Function der skifter splash billedet
 
+        var i = 0;
+        var image = [];
+        var time = 3000;
+
+        // billede visning
+        image[0] = 'img/interior/arthoj_skaal_1.jpg';
+        image[1] = 'img/interior/boobies_1.jpg';
+        image[2] = 'img/interior/gronvase_1.jpg';
+
+        //skift billede
+
+        function skiftImg() {
+            document.slide.src = image[i];
+
+            if (i < image.length - 1) {
+                i++;
+            } else {
+                i = 0;
+            }
+
+            setTimeout("skiftImg()", time);
+        }
+
         document.addEventListener("DOMContentLoaded", sidenVises)
 
         function sidenVises() {
             console.log("sidenVises");
+            window.onload = skiftImg;
             document.querySelector("#menuknap").addEventListener("click", toggleMenu);
+
         }
 
 
