@@ -48,13 +48,13 @@
 
     <nav id="filter_menu">
         <button class="filter valgt" data-kategori="alle">Alle</button>
-        <button class="filter " data-underkategori="">Skåle</button>
-        <button class="filter " data-underkategori="">Vaser</button>
-        <button class="filter " data-underkategori="">Opbevaring</button>
-        <button class="filter " data-underkategori="">Lamper</button>
-        <button class="filter " data-underkategori="">Nips</button>
-        <button class="filter " data-underkategori="">Lysestager</button>
-        <button class="filter " data-underkategori="">Krukker</button>
+        <button class="filter " data-underkategori="skaale">Skåle</button>
+        <button class="filter " data-underkategori="vaser">Vaser</button>
+        <button class="filter " data-underkategori="opbevaring">Opbevaring</button>
+        <button class="filter " data-underkategori="lamper">Lamper</button>
+        <button class="filter " data-underkategori="nips">Nips</button>
+        <button class="filter " data-underkategori="lysestager">Lysestager</button>
+        <button class="filter " data-underkategori="krukker">Krukker</button>
     </nav>
     <h1>Alle</h1>
 
@@ -86,7 +86,7 @@
     </footer>
 
     <script>
-        const endpoint = "https://spreadsheets.google.com/feeds/list//od6/public/values?alt=json";
+        const endpoint = "https://spreadsheets.google.com/feeds/list/1bzIQBLs8Mo3pBGwl4HYI-KxXMqAFf4WwoNaNOwZ5d6M/od6/public/values?alt=json";
 
         let item = [];
 
@@ -114,6 +114,8 @@
             const template = document.querySelector("template");
 
             listevisning.innerHTML = "";
+
+
 
 
         }

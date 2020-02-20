@@ -48,10 +48,10 @@
 
     <nav id="filter_menu">
         <button class="filter valgt" data-kategori="alle">Alle</button>
-        <button class="filter " data-underkategori="">Tallerkener</button>
-        <button class="filter " data-underkategori="">Fade</button>
-        <button class="filter " data-underkategori="">Kopper</button>
-        <button class="filter " data-underkategori="">Kander</button>
+        <button class="filter " data-underkategori="tallerkener">Tallerkener</button>
+        <button class="filter " data-underkategori="fade">Fade</button>
+        <button class="filter " data-underkategori="kopper">Kopper</button>
+        <button class="filter " data-underkategori="kander">Kander</button>
     </nav>
     <h1>Alle</h1>
 
@@ -83,6 +83,12 @@
     </footer>
 
     <script>
+        const endpoint = "https://spreadsheets.google.com/feeds/list/1bzIQBLs8Mo3pBGwl4HYI-KxXMqAFf4WwoNaNOwZ5d6M/od6/public/values?alt=json";
+
+        let item = [];
+
+        let filter = "alle";
+
         document.addEventListener("DOMContentLoaded", sidenVises)
 
         function sidenVises() {
