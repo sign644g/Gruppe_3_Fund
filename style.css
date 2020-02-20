@@ -270,8 +270,8 @@ footer {
     }
 
     #filter_menu button {
-        width: 7vw;
-        height: 2.2vw;
+        width: 100px;
+        height: 28px;
         font-size: 1rem;
 
     }

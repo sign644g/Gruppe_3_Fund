@@ -36,7 +36,7 @@
 
             <ul id="menu" class="hidden">
                 <li><a href="service.html">Service</a></li>
-                <li> <a href="interior.html">interiør</a></li>
+                <li><a href="interior.html">interiør</a></li>
                 <li> <a href="startside.html"><img class="logo_stor" src="img/logo_stort.svg" alt="Fund´s logo stort"> </a></li>
                 <li> <a href="om.html">Om os</a></li>
                 <li> <a href="gavekort.html">Gavekort</a></li>
@@ -48,12 +48,13 @@
 
     <nav id="filter_menu">
         <button class="filter valgt" data-kategori="alle">Alle</button>
-        <button class="filter " data-underkategori="tallerkener">Tallerkener</button>
-        <button class="filter " data-underkategori="fade">Fade</button>
-        <button class="filter " data-underkategori="kopper">Kopper</button>
-        <button class="filter " data-underkategori="kander">Kander</button>
+        <button class="filter" data-kategori="tallerkener">Tallerkener</button>
+        <button class="filter" data-kategori="fade">Fade</button>
+        <button class="filter" data-kategori="kopper">Kopper</button>
+        <button class="filter" data-kategori="kander">Kander</button>
+
     </nav>
-    <h1>Alle</h1>
+    <h1></h1>
 
     <section id="item_view">
         <section class="data-container"></section>
@@ -85,18 +86,80 @@
     <script>
         const endpoint = "https://spreadsheets.google.com/feeds/list/1bzIQBLs8Mo3pBGwl4HYI-KxXMqAFf4WwoNaNOwZ5d6M/od6/public/values?alt=json";
 
-        let item = [];
+        let varer = [];
 
         let filter = "alle";
 
-        document.addEventListener("DOMContentLoaded", sidenVises)
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            sidenVises();
+            loadData();
+            filterButtons();
+        }
+
+        async function loadData() {
+            const response = await fetch(endpoint);
+            console.log(response);
+            varer = await response.json();
+            console.log(varer);
+
+            visItems();
+        }
+
+        function visItems() {
+            const listevisning = document.querySelector(".data-container");
+            const template = document.querySelector("template");
+
+            listevisning.innerHTML = "";
+
+            varer.feed.entry.forEach(ting => {
+                if (filter == "alle" || filter == ting.gsx$underkategori.$t) {
+
+
+                    let klon = template.cloneNode(true).content;
+
+                    klon.querySelector("img").src = "img/interior/" + ting.gsx$billede1.$t;
+
+                    klon.querySelector("#navn").textContent = ting.gsx$navn.$t;
+                    klon.querySelector("#pris").textContent = ting.gsx$pris.$t;
+                    klon.querySelector("#status").textContent = ting.gsx$status.$t;
+                    klon.querySelector("#alleItems").addEventListener("click", () => {
+                        location.href = "detalje.html?id=" + ting.gsx$id.$t;
+                    });
+
+                    listevisning.appendChild(klon);
+
+                }
+            })
+
+
+        }
+
+        function filterButtons() {
+
+            document.querySelectorAll(".filter").forEach(elm => {
+                elm.addEventListener("click", filtrering);
+            })
+        }
+
+        function filtrering() {
+            filter = this.dataset.kategori;
+            document.querySelectorAll(".filter").forEach(elm => {
+                elm.classList.remove("valgt");
+            })
+
+            this.classList.add("valgt");
+            visItems();
+        }
+
 
         function sidenVises() {
             console.log("sidenVises");
             document.querySelector("#menuknap").addEventListener("click", toggleMenu);
         }
 
-
+        //funktion til burgermenu
         function toggleMenu() {
             console.log("toggleMenu");
             document.querySelector("#menu").classList.toggle("hidden");
@@ -109,6 +172,9 @@
                 document.querySelector("#menuknap").textContent = "X";
             }
         }
+
     </script>
 
-</body></html>
+</body>
+
+</html>
