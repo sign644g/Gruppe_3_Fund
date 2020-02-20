@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fund</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!--   Typografi hentet fra google font-->
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
+
+    <!--    Fav icon-->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+    <header>
+
+        <nav>
+            <div class="logo_lille">
+                <a href="startside.html">
+                    <img src="img/logo_lille.svg" alt="Fund´s logo lille">
+                </a>
+            </div>
+
+            <div id="menuknap">☰</div>
+
+            <ul id="menu" class="hidden">
+                <li><a href="service.html">Service</a></li>
+                <li> <a href="interior.html">interiør</a></li>
+                <li> <a href="startside.html"><img class="logo_stor" src="img/logo_stort.svg" alt="Fund´s logo stort"> </a></li>
+                <li> <a href="om.html">Om os</a></li>
+                <li> <a href="gavekort.html">Gavekort</a></li>
+            </ul>
+
+            <!--           tilføj til kurv icon tilføjes-->
+        </nav>
+    </header>
+
+    <nav id="filter_menu">
+        <button class="filter valgt" data-kategori="alle">Alle</button>
+        <button class="filter " data-underkategori="">Skåle</button>
+        <button class="filter " data-underkategori="">Vaser</button>
+        <button class="filter " data-underkategori="">Opbevaring</button>
+        <button class="filter " data-underkategori="">Lamper</button>
+        <button class="filter " data-underkategori="">Nips</button>
+        <button class="filter " data-underkategori="">Lysestager</button>
+        <button class="filter " data-underkategori="">Krukker</button>
+    </nav>
+    <h1>Alle</h1>
+
+    <section id="item_view">
+        <section class="data-container"></section>
+        <template>
+            <article id="alleItems">
+                <img src="" alt="">
+                <h3 id="navn"></h3>
+                <h4 id="pris"></h4>
+                <p id="status"></p>
+            </article>
+        </template>
+    </section>
+
+
+    <footer>
+        <div id="oplysninger">
+            <div class="indhold">
+                <h3>Kontakt os:</h3>
+                <p>Lygten 16<br>2400 København N<br>Tlf: +45 12 34 56 78<br>Mail: Fund@gmail.com</p>
+            </div>
+            <div class="indhold">
+                <h3>Følg med:</h3>
+                <p>Instagram: @fund<br>Facebook: Fund_genbrug</p>
+                <!--                facebook og insta ikoner tilføjes-->
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const endpoint = "https://spreadsheets.google.com/feeds/list//od6/public/values?alt=json";
+
+        let item = [];
+
+        let filter = "alle";
+
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            sidenVises();
+            loadData();
+            filterButtons();
+        }
+
+        async function loadData() {
+            const response = await fetch(endpoint);
+            console.log(response);
+            menu = await response.json();
+            console.log(item);
+
+            visItems();
+        }
+
+        function visItems() {
+            const listevisning = document.querySelector(".data-container");
+            const template = document.querySelector("template");
+
+            listevisning.innerHTML = "";
+
+
+        }
+
+        function filterButtons() {
+
+            document.querySelectorAll(".filter").forEach(elm => {
+                elm.addEventListener("click", filtrering);
+            })
+        }
+
+
+        function filtrering() {
+            filter = this.dataset.kategori;
+            document.querySelector("h1").textContent = this.textContent;
+            document.querySelectorAll(".filter").forEach(elm => {
+                elm.classList.remove("valgt");
+            })
+
+            this.classList.add("valgt");
+            visItems();
+        }
+
+
+        function sidenVises() {
+            console.log("sidenVises");
+            document.querySelector("#menuknap").addEventListener("click", toggleMenu);
+        }
+
+        //funktion til burgermenu
+        function toggleMenu() {
+            console.log("toggleMenu");
+            document.querySelector("#menu").classList.toggle("hidden");
+
+            let erSkjult = document.querySelector("#menu").classList.contains("hidden");
+
+            if (erSkjult == true) {
+                document.querySelector("#menuknap").textContent = "☰";
+            } else {
+                document.querySelector("#menuknap").textContent = "X";
+            }
+        }
+    </script>
+
+</body></html>

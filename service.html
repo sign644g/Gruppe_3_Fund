@@ -36,7 +36,7 @@
 
             <ul id="menu" class="hidden">
                 <li><a href="service.html">Service</a></li>
-                <li> <a href="dekorationer.html">Dekorationer</a></li>
+                <li> <a href="interior.html">interiør</a></li>
                 <li> <a href="startside.html"><img class="logo_stor" src="img/logo_stort.svg" alt="Fund´s logo stort"> </a></li>
                 <li> <a href="om.html">Om os</a></li>
                 <li> <a href="gavekort.html">Gavekort</a></li>
@@ -48,22 +48,21 @@
 
     <nav id="filter_menu">
         <button class="filter valgt" data-kategori="alle">Alle</button>
-        <button class="filter " data-kategori=""></button>
-        <button class="filter " data-kategori=""></button>
-        <button class="filter " data-kategori=""></button>
-        <button class="filter " data-kategori=""></button>
-        <button class="filter " data-kategori=""></button>
+        <button class="filter " data-underkategori="">Tallerkener</button>
+        <button class="filter " data-underkategori="">Fade</button>
+        <button class="filter " data-underkategori="">Kopper</button>
+        <button class="filter " data-underkategori="">Kander</button>
     </nav>
     <h1>Alle</h1>
 
-    <section id="menu_view">
+    <section id="item_view">
         <section class="data-container"></section>
         <template>
-            <article id="alleMenu">
+            <article id="alleItems">
                 <img src="" alt="">
                 <h3 id="navn"></h3>
-                <p id="p1"></p>
                 <h4 id="pris"></h4>
+                <p id="status"></p>
             </article>
         </template>
     </section>
@@ -84,8 +83,6 @@
     </footer>
 
     <script>
-        //        Function der skifter splash billedet
-
         document.addEventListener("DOMContentLoaded", sidenVises)
 
         function sidenVises() {
@@ -106,9 +103,6 @@
                 document.querySelector("#menuknap").textContent = "X";
             }
         }
-
     </script>
 
-</body>
-
-</html>
+</body></html>
