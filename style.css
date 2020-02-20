@@ -1,5 +1,7 @@
 /*--- Genrelle indstillinger---*/
 
+@import url("https://use.typekit.net/dms1wcw.css");
+
 * {
     box-sizing: border-box;
 }
@@ -90,7 +92,7 @@ header nav a {
 
 
 header nav a:hover {
-    color: mediumpurple;
+    color: #937AB5;
 }
 
 header li {
@@ -99,12 +101,37 @@ header li {
 
 /*---Header - burgermenu SLUT---*/
 
+/*---Underkategorier - knapper---*/
+#filter_menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#filter_menu button {
+    cursor: pointer;
+    width: 50vw;
+    height: 8vw;
+    margin: 1vw;
+    font-family: titillium-web, sans-serif;
+    font-weight: 300;
+    font-size: 1.5rem;
+    border-color: #937AB5;
+
+}
+
+#filter_menu button:hover {
+    background-color: #937AB5;
+    color: white;
+
+}
+
+
 /*---css grid og indhold---*/
 
 article {
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
     margin: 2vw;
-
+    text-align: center;
 }
 
 #item_view {
@@ -115,6 +142,7 @@ article {
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    line-height: 0.7em;
 }
 
 #alleItems img {
@@ -126,22 +154,54 @@ article {
     z-index: 1;
     width: 100%;
     transition: all 0.5s;
-
+    height: 400px;
+    object-fit: cover;
 }
 
-#alleItems img:hover {
+
+/*#alleItems img:hover {
     z-index: 1;
     transform: scale(1.1);
 
+}*/
+
+#alleItems:hover {
+    border: solid 1px;
+    border-color: #937AB5;
+
+
 }
 
+#alleItems h3 {
+    font-family: titillium-web, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+#alleItems h4 {
+    font-family: titillium-web, sans-serif;
+    font-weight: 300;
+    font-size: 1.5rem;
+    font-style: normal;
+    color: #937AB5;
+}
+
+#alleItems p {
+    font-family: titillium-web, sans-serif;
+    font-weight: 300;
+    font-size: 0.8rem;
+    font-style: italic;
+}
 
 .data-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 5px;
     margin: 10px;
+
 }
+
 
 /*---css grid og indhold - Slut---*/
 
@@ -189,7 +249,7 @@ footer {
 
     .logo_stor {
         width: 10vw;
-        height: 4vh;
+        height: 5vh;
     }
 
     header li {
@@ -197,4 +257,18 @@ footer {
         padding-right: 2rem;
 
     }
+
+    #filter_menu {
+        flex-direction: row;
+        align-items: flex-start;
+        margin-top: 2vw;
+    }
+
+    #filter_menu button {
+        width: 7vw;
+        height: 2.2vw;
+        font-size: 1rem;
+
+    }
+
 }

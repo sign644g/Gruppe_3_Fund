@@ -48,15 +48,15 @@
 
     <nav id="filter_menu">
         <button class="filter valgt" data-kategori="alle">Alle</button>
-        <button class="filter " data-underkategori="skaale">Skåle</button>
-        <button class="filter " data-underkategori="vaser">Vaser</button>
-        <button class="filter " data-underkategori="opbevaring">Opbevaring</button>
-        <button class="filter " data-underkategori="lamper">Lamper</button>
-        <button class="filter " data-underkategori="nips">Nips</button>
-        <button class="filter " data-underkategori="lysestager">Lysestager</button>
-        <button class="filter " data-underkategori="krukker">Krukker</button>
+        <button class="filter" data-underkategori="skaale">Skåle</button>
+        <button class="filter" data-underkategori="vaser">Vaser</button>
+        <button class="filter" data-underkategori="opbevaring">Opbevaring</button>
+        <button class="filter" data-underkategori="lamper">Lamper</button>
+        <button class="filter" data-underkategori="nips">Nips</button>
+        <button class="filter" data-underkategori="lysestager">Lysestager</button>
+        <button class="filter" data-underkategori="krukker">Krukker</button>
     </nav>
-    <h1>Alle</h1>
+    <h1></h1>
 
     <section id="item_view">
         <section class="data-container"></section>
@@ -103,7 +103,7 @@
         async function loadData() {
             const response = await fetch(endpoint);
             console.log(response);
-            menu = await response.json();
+            varer = await response.json();
             console.log(varer);
 
             visItems();
@@ -121,8 +121,7 @@
 
                     let klon = template.cloneNode(true).content;
 
-                    klon.querySelector("img").src = "img/interior/" + ting.gsx$billede1.$t + "_1.jpg";
-                    klon.querySelector("img").alt = "billede af" + ting.gsx$navn.$t;
+                    klon.querySelector("img").src = "img/interior/" + ting.gsx$billede1.$t;
 
                     klon.querySelector("#navn").textContent = ting.gsx$navn.$t;
                     klon.querySelector("#pris").textContent = ting.gsx$pris.$t;
@@ -178,6 +177,9 @@
                 document.querySelector("#menuknap").textContent = "X";
             }
         }
+
     </script>
 
-</body></html>
+</body>
+
+</html>
