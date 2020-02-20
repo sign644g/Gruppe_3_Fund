@@ -171,9 +171,7 @@ article {
 }*/
 
 #alleItems:hover {
-    border: solid 1px;
-    border-color: #937AB5;
-
+    background-color: #FAFAFA;
 
 }
 
