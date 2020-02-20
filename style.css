@@ -99,6 +99,51 @@ header li {
 
 /*---Header - burgermenu SLUT---*/
 
+/*---css grid og indhold---*/
+
+article {
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    margin: 2vw;
+
+}
+
+#item_view {
+    max-width: 1200px;
+}
+
+#alleItems {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+#alleItems img {
+    /*
+    width: 400px;
+    height: 267px;
+    object-fit: contain;
+*/
+    z-index: 1;
+    width: 100%;
+    transition: all 0.5s;
+
+}
+
+#alleItems img:hover {
+    z-index: 1;
+    transform: scale(1.1);
+
+}
+
+
+.data-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 5px;
+    margin: 10px;
+}
+
+/*---css grid og indhold - Slut---*/
 
 /*--- Footer---*/
 
