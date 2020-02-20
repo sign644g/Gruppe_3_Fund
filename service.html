@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fund</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!--   Typografi hentet fra google font-->
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
+
+    <!--    Fav icon-->
+</head>
+
+<body>
+    <header>
+
+        <nav>
+            <div class="logo_lille">
+                <a href="startside.html">
+                    <img src="img/logo_lille.svg" alt="Fund´s logo lille">
+                </a>
+            </div>
+
+            <div id="menuknap">☰</div>
+
+            <ul id="menu" class="hidden">
+                <li><a href="service.html">Service</a></li>
+                <li> <a href="dekorationer.html">Dekorationer</a></li>
+                <li> <a href="startside.html"><img class="logo_stor" src="img/logo_stort.svg" alt="Fund´s logo stort"> </a></li>
+                <li> <a href="om.html">Om os</a></li>
+                <li> <a href="gavekort.html">Gavekort</a></li>
+            </ul>
+
+            <!--           tilføj til kurv icon tilføjes-->
+        </nav>
+    </header>
+
+    <footer>
+        <div id="oplysninger">
+            <div class="indhold">
+                <h3>Kontakt os:</h3>
+                <p>Lygten 16<br>2400 København N<br>Tlf: +45 12 34 56 78<br>Mail: Fund@gmail.com</p>
+            </div>
+            <div class="indhold">
+                <h3>Følg med:</h3>
+                <p>Instagram: @fund<br>Facebook: Fund_genbrug</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        //        Function der skifter splash billedet
+
+        document.addEventListener("DOMContentLoaded", sidenVises)
+
+        function sidenVises() {
+            console.log("sidenVises");
+            document.querySelector("#menuknap").addEventListener("click", toggleMenu);
+        }
+
+
+        function toggleMenu() {
+            console.log("toggleMenu");
+            document.querySelector("#menu").classList.toggle("hidden");
+
+            let erSkjult = document.querySelector("#menu").classList.contains("hidden");
+
+            if (erSkjult == true) {
+                document.querySelector("#menuknap").textContent = "☰";
+            } else {
+                document.querySelector("#menuknap").textContent = "X";
+            }
+        }
+    </script>
+
+</body></html>

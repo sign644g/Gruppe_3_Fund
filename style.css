@@ -1,0 +1,155 @@
+/*--- Genrelle indstillinger---*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+img {
+    width: 100%;
+}
+
+/*--- Genrelle indstillinger SLUT ---*/
+
+/*--- fælles designregler for alle sektioner ---*/
+
+section {
+    margin: 0 auto;
+}
+
+/*--- fælles designregler for alle sektioner SLUT ---*/
+
+/*---Header - burgermenu---*/
+/*
+.kurv {
+    display: block;
+    position: absolute;
+    top: 0.5vw;
+    right: 0.5vw;
+    margin: 0;
+    height: 3vh;
+    width: 3vw;
+}
+*/
+
+.logo_lille {
+    display: block;
+    position: absolute;
+    top: 0.5vw;
+    left: 1vw;
+    margin: 0;
+    width: 10%;
+}
+
+.logo_stort {
+    display: none;
+}
+
+
+.hidden {
+    display: none;
+    /*    transform: scale(0);*/
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+#menuknap {
+    display: inline-block;
+    color: black;
+    margin: 0.6rem;
+}
+
+#menu {
+    list-style-type: none;
+    transition: transform .3s;
+    width: 100%;
+}
+
+header {
+    width: 100%;
+    color: white;
+
+}
+
+header nav {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+header nav a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+
+header nav a:hover {
+    color: mediumpurple;
+}
+
+header li {
+    text-align: center;
+}
+
+/*---Header - burgermenu SLUT---*/
+
+
+/*--- Footer---*/
+
+footer {
+    border-top: 0.2rem solid purple;
+    font-size: 1.2em;
+}
+
+#oplysninger {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1em;
+}
+
+#oplysninger p {
+    margin: 0 0 10px 0;
+}
+
+/*--- Footer - slut---*/
+
+/*--- Media QUeries ---*/
+
+@media only screen and (min-width: 600px) {
+
+    #menu {
+        text-align: center;
+        justify-content: space-between;
+    }
+
+    #menuknap {
+        display: none;
+    }
+
+    .hidden {
+        transform: translateX(0);
+        opacity: 1;
+        display: inline-block;
+    }
+
+    .logo_lille {
+        display: none;
+    }
+
+    .logo_stor {
+        width: 10vw;
+        height: 4vh;
+    }
+
+    header li {
+        display: inline-block;
+        padding-right: 2rem;
+
+    }
+}
