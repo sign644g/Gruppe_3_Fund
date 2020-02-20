@@ -35,8 +35,8 @@
             <div id="menuknap">☰</div>
 
             <ul id="menu" class="hidden">
-                <li><a class="filter" data-kategori="service" href="service.html">Service</a></li>
-                <li><a class="filter" data-kategori="interiør" href="interior.html">Interiør</a></li>
+                <li><a href="service.html">Service</a></li>
+                <li><a href="interior.html">Interiør</a></li>
                 <li> <a href="startside.html"><img class="logo_stor" src="img/logo_stort.svg" alt="Fund´s logo stort"> </a></li>
                 <li> <a href="om.html">Om os</a></li>
                 <li> <a href="gavekort.html">Gavekort</a></li>
@@ -47,7 +47,7 @@
     </header>
 
     <nav id="filter_menu">
-        <button class="filter valgt" data-kategori="alle">Alle</button>
+        <button class="filter valgt" data-kategori="interiør">Alle</button>
         <button class="filter" data-kategori="skaale">Skåle</button>
         <button class="filter" data-kategori="vaser">Vaser</button>
         <button class="filter" data-kategori="opbevaring">Opbevaring</button>
@@ -116,7 +116,7 @@
             listevisning.innerHTML = "";
 
             varer.feed.entry.forEach(ting => {
-                if (filter == "alle" || filter == ting.gsx$underkategori.$t) {
+                if (filter == "alle" || filter == ting.gsx$kategori.$t || filter == ting.gsx$underkategori.$t) {
 
 
                     let klon = template.cloneNode(true).content;
@@ -132,9 +132,9 @@
 
                     listevisning.appendChild(klon);
 
+
                 }
             })
-
 
         }
 

@@ -47,7 +47,7 @@
     </header>
 
     <nav id="filter_menu">
-        <button class="filter valgt" data-kategori="alle">Alle</button>
+        <button class="filter valgt" data-kategori="service">Alle</button>
         <button class="filter" data-kategori="tallerkener">Tallerkener</button>
         <button class="filter" data-kategori="fade">Fade</button>
         <button class="filter" data-kategori="kopper">Kopper</button>
@@ -114,7 +114,7 @@
             listevisning.innerHTML = "";
 
             varer.feed.entry.forEach(ting => {
-                if (filter == "alle" || filter == ting.gsx$underkategori.$t) {
+                if (filter == "alle" || filter == ting.gsx$kategori.$t || filter == ting.gsx$underkategori.$t) {
 
 
                     let klon = template.cloneNode(true).content;
