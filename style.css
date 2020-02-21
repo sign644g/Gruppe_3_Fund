@@ -231,7 +231,8 @@ footer {
 
 #oplysninger {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(1, 1fr);
+    /*grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));*/
     /*    husk     */
     padding: 1em 4em;
 }
@@ -306,7 +307,8 @@ footer {
 
     #oplysninger {
         justify-items: center;
-        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        /*        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));*/
+        grid-template-columns: repeat(2, 2fr);
     }
 
 }
