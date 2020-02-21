@@ -8,7 +8,7 @@
 
 body {
     margin: 0;
-    font-family: 'Titillium Web', sans-serif;
+    font-family: titillium-web, sans-serif;
 }
 
 img {
@@ -228,6 +228,38 @@ article {
 
 /*---css grid og indhold - Slut---*/
 
+/*--- Ekstern detalje side ---*/
+
+#detalje {
+    display: grid;
+    /*    grid-template-columns: repeat(2, 2fr);*/
+    grid-template-columns: repeat(auto-fill, minmax(800px, 2fr));
+}
+
+#detalje_view img {
+    z-index: 1;
+    width: 100%;
+    transition: all 0.5s;
+    height: 400px;
+    object-fit: cover;
+    position: absolute;
+}
+
+#luk,
+#til_kurv {
+    cursor: pointer;
+    width: 10vw;
+    height: 7vw;
+    margin: 1vw;
+    font-family: titillium-web, sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    border-color: #937AB5;
+}
+
+
+/*---Ekstern detalje side - Slut---*/
+
 /*--- Footer---*/
 
 
@@ -241,7 +273,6 @@ footer {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     /*grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));*/
-    /*    husk     */
     padding: 1em 4em;
 }
 
