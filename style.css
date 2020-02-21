@@ -119,6 +119,11 @@ header li {
 
 }
 
+.tryk {
+    text-decoration: underline;
+    text-decoration-color: #937AB5;
+}
+
 
 /*---css grid og indhold---*/
 
@@ -197,7 +202,6 @@ article {
     margin: 10px;
 
 }
-
 
 .billede1 {
     z-index: 2;
