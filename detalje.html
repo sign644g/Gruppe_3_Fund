@@ -49,9 +49,9 @@
         </nav>
     </header>
 
-
+    <button id="luk">Tilbage</button>
     <section id="detalje">
-        <button id="luk">X</button>
+
         <article id="detalje_view">
             <div class="billederne">
                 <img class="billede2" src="" alt="">
@@ -60,7 +60,10 @@
             <div class="information">
                 <h3 id="navn"></h3>
                 <h4 id="pris"></h4>
+                <p id="lang"></p>
+                <p id="mål"></p>
                 <p id="status"></p>
+                <button id="til_kurv">Tilføj til kurv</button>
             </div>
         </article>
     </section>
@@ -127,6 +130,8 @@
 
                     detalje.querySelector("#navn").textContent = ting.gsx$navn.$t;
                     detalje.querySelector("#pris").textContent = ting.gsx$pris.$t;
+                    detalje.querySelector("#lang").textContent = ting.gsx$lang.$t;
+                    detalje.querySelector("#mål").textContent = ting.gsx$mål.$t;
                     detalje.querySelector("#status").textContent = ting.gsx$status.$t;
                 }
             })
