@@ -26,17 +26,10 @@ section {
 /*--- fælles designregler for alle sektioner SLUT ---*/
 
 /*---Header - burgermenu---*/
-/*
+
 .kurv {
-    display: block;
-    position: absolute;
-    top: 0.5vw;
-    right: 0.5vw;
-    margin: 0;
-    height: 3vh;
-    width: 3vw;
+    display: none;
 }
-*/
 
 .logo_lille {
     display: block;
@@ -231,18 +224,26 @@ article {
 /*--- Footer---*/
 
 footer {
-    border-top: 0.2rem solid purple;
+    border-top: 0.2rem solid #937AB5;
     font-size: 1.2em;
+
 }
 
 #oplysninger {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 1em;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /*    husk     */
+    padding: 1em 4em;
 }
 
 #oplysninger p {
     margin: 0 0 10px 0;
+}
+
+.ikoner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 20%;
 }
 
 /*--- Footer - slut---*/
@@ -294,5 +295,24 @@ footer {
 
     }
 
+    .kurv {
+        display: block;
+        position: absolute;
+        top: 0.5vw;
+        right: 1vw;
+        margin: 0;
+        width: 6vw;
+    }
 
+    #oplysninger {
+        justify-items: center;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    }
+
+}
+
+@media only screen and (min-width: 1000px) {
+    .kurv {
+        width: 3vw;
+    }
 }
