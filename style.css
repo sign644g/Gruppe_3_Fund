@@ -173,14 +173,16 @@ article {
 
 }*/
 
-.alleItems h3 {
+.alleItems h3,
+.gavekort h3 {
     font-family: titillium-web, sans-serif;
     font-weight: 300;
     font-style: normal;
 }
 
 
-.alleItems h4 {
+.alleItems h4,
+.gavekort h4 {
     font-family: titillium-web, sans-serif;
     font-weight: 300;
     font-size: 1.5rem;
@@ -188,7 +190,8 @@ article {
     color: #937AB5;
 }
 
-.alleItems p {
+.alleItems p,
+.gavekort p {
     font-family: titillium-web, sans-serif;
     font-weight: 300;
     font-size: 0.8rem;
@@ -227,6 +230,7 @@ article {
 
 /*--- Footer---*/
 
+
 footer {
     border-top: 0.2rem solid #937AB5;
     font-size: 1.2em;
@@ -250,6 +254,16 @@ footer {
     grid-template-columns: repeat(2, 1fr);
     width: 20%;
 }
+
+.gavekort img:hover {
+    opacity: 0.5;
+}
+
+.gavekort {
+    line-height: 1em;
+}
+
+/*-----GAVEKORT------*/
 
 /*--- Footer - slut---*/
 
@@ -313,6 +327,21 @@ footer {
         justify-items: center;
         /*        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));*/
         grid-template-columns: repeat(2, 2fr);
+    }
+
+    .gavekort {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        margin-left: 10vw;
+        margin-right: 10vw;
+        cursor: pointer;
+    }
+
+    .gavekort1,
+    .gavekort2 {
+        margin: 1vw;
+        width: 400px;
     }
 
 }
