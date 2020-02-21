@@ -120,14 +120,14 @@
         }
 
         function visItems() {
-            const listevisning = document.querySelector(".data-container");
-            const template = document.querySelector("template");
+            const listevisning = document.querySelector(".data-container"); //container tilarticles med varer
+            const template = document.querySelector("template"); //select indhold af html skabelon=article
 
             listevisning.innerHTML = "";
 
-            varer.feed.entry.forEach(ting => {
+            varer.feed.entry.forEach(ting => { //loop igennem json
                 if (filter == "alle" || filter == ting.gsx$kategori.$t || filter == ting.gsx$underkategori.$t) {
-
+                    //tjek sidens kategori og sammenlign med tingens underkategori
 
                     let klon = template.cloneNode(true).content;
 
@@ -138,6 +138,7 @@
                     klon.querySelector("#pris").textContent = ting.gsx$pris.$t;
                     klon.querySelector("#status").textContent = ting.gsx$status.$t;
                     klon.querySelector(".alleItems").addEventListener("click", () => {
+                        //henviser til ekstern side
                         location.href = "detalje.html?id=" + ting.gsx$id.$t;
                     });
 
