@@ -61,11 +61,16 @@
     <section id="item_view">
         <section class="data-container"></section>
         <template>
-            <article id="alleItems">
-                <img src="" alt="">
-                <h3 id="navn"></h3>
-                <h4 id="pris"></h4>
-                <p id="status"></p>
+            <article class="alleItems">
+                <div class="billederne">
+                    <img class="billede2" src="" alt="">
+                    <img class="billede1" src="" alt="">
+                </div>
+                <div class="information">
+                    <h3 id="navn"></h3>
+                    <h4 id="pris"></h4>
+                    <p id="status"></p>
+                </div>
             </article>
         </template>
     </section>
@@ -90,7 +95,7 @@
 
         let varer = [];
 
-        let filter = "alle";
+        let filter = "interiør";
 
         document.addEventListener("DOMContentLoaded", start);
 
@@ -98,10 +103,12 @@
             sidenVises();
             loadData();
             filterButtons();
+
         }
 
         async function loadData() {
             const response = await fetch(endpoint);
+
             console.log(response);
             varer = await response.json();
             console.log(varer);
@@ -121,12 +128,13 @@
 
                     let klon = template.cloneNode(true).content;
 
-                    klon.querySelector("img").src = "img/interior/" + ting.gsx$billede1.$t;
+                    klon.querySelector(".billede1").src = "img/interior/" + ting.gsx$billede1.$t;
+                    klon.querySelector(".billede2").src = "img/interior/" + ting.gsx$billede2.$t;
 
                     klon.querySelector("#navn").textContent = ting.gsx$navn.$t;
                     klon.querySelector("#pris").textContent = ting.gsx$pris.$t;
                     klon.querySelector("#status").textContent = ting.gsx$status.$t;
-                    klon.querySelector("#alleItems").addEventListener("click", () => {
+                    klon.querySelector(".alleItems").addEventListener("click", () => {
                         location.href = "detalje.html?id=" + ting.gsx$id.$t;
                     });
 

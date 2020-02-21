@@ -131,21 +131,22 @@ header li {
 
 article {
     margin: 2vw;
-    text-align: center;
+
 }
 
 #item_view {
     max-width: 1200px;
 }
 
-#alleItems {
+.alleItems {
     cursor: pointer;
     position: relative;
-    overflow: hidden;
-    line-height: 0.7em;
+
+    line-height: 1em;
+    height: 550px;
 }
 
-#alleItems img {
+.alleItems img {
     /*
     width: 400px;
     height: 267px;
@@ -156,6 +157,9 @@ article {
     transition: all 0.5s;
     height: 400px;
     object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .valgt {
@@ -170,19 +174,14 @@ article {
 
 }*/
 
-#alleItems:hover {
-    background-color: #FAFAFA;
-
-}
-
-#alleItems h3 {
+.alleItems h3 {
     font-family: titillium-web, sans-serif;
     font-weight: 300;
     font-style: normal;
 }
 
 
-#alleItems h4 {
+.alleItems h4 {
     font-family: titillium-web, sans-serif;
     font-weight: 300;
     font-size: 1.5rem;
@@ -190,7 +189,7 @@ article {
     color: #937AB5;
 }
 
-#alleItems p {
+.alleItems p {
     font-family: titillium-web, sans-serif;
     font-weight: 300;
     font-size: 0.8rem;
@@ -205,6 +204,26 @@ article {
 
 }
 
+
+.billede1 {
+    z-index: 2;
+}
+
+.billede1:hover {
+    /*    display: none;*/
+    opacity: 0;
+}
+
+.billederne {
+    height: 200px;
+    width: 200px;
+
+}
+
+.information {
+    position: absolute;
+    top: 400px;
+}
 
 /*---css grid og indhold - Slut---*/
 
@@ -273,5 +292,6 @@ footer {
         font-size: 1rem;
 
     }
+
 
 }

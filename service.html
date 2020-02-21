@@ -59,7 +59,7 @@
     <section id="item_view">
         <section class="data-container"></section>
         <template>
-            <article id="alleItems">
+            <article class="alleItems">
                 <img src="" alt="">
                 <h3 id="navn"></h3>
                 <h4 id="pris"></h4>
@@ -88,7 +88,7 @@
 
         let varer = [];
 
-        let filter = "alle";
+        let filter = "service";
 
         document.addEventListener("DOMContentLoaded", start);
 
@@ -124,7 +124,7 @@
                     klon.querySelector("#navn").textContent = ting.gsx$navn.$t;
                     klon.querySelector("#pris").textContent = ting.gsx$pris.$t;
                     klon.querySelector("#status").textContent = ting.gsx$status.$t;
-                    klon.querySelector("#alleItems").addEventListener("click", () => {
+                    klon.querySelector(".alleItems").addEventListener("click", () => {
                         location.href = "detalje.html?id=" + ting.gsx$id.$t;
                     });
 
