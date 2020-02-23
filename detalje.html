@@ -53,8 +53,13 @@
     <section id="detalje">
         <button id="luk">Tilbage</button>
         <article id="detalje_view">
-            <div class="billede">
-                <img src="" alt="">
+            <div class="slideshow-container">
+                <div class="mySlides">
+                    <img class="billede" src="" alt="">
+                </div>
+                <div class="mySlides">
+                    <img class="billede_2" src="" alt="">
+                </div>
             </div>
             <div class="tekst">
                 <h3 id="navn"></h3>
@@ -65,6 +70,12 @@
                 <button id="til_kurv">Tilføj til kurv</button>
             </div>
         </article>
+        <a class="prev" onclick="plusSlides(-1)">&#10095;</a>
+        <br>
+        <div class="dot_container">
+            <span class="dot" onlick="currentSlide(1)"></span>
+            <span class="dot" onlick="currentSlide(2)"></span>
+        </div>
     </section>
 
 
@@ -124,7 +135,8 @@
 
                     detalje.classList.remove("skjul");
 
-                    detalje.querySelector("img").src = "img/interior/" + ting.gsx$billede1.$t;
+                    detalje.querySelector(".billede").src = "img/interior/" + ting.gsx$billede1.$t;
+                    detalje.querySelector(".billede_2").src = "img/interior/" + ting.gsx$billede2.$t;
 
                     detalje.querySelector("#navn").textContent = ting.gsx$navn.$t;
                     detalje.querySelector("#pris").textContent = ting.gsx$pris.$t;
@@ -160,6 +172,39 @@
             } else {
                 document.querySelector("#menuknap").textContent = "X";
             }
+        }
+
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
         }
 
     </script>

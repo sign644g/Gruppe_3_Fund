@@ -101,7 +101,7 @@ header li {
     align-items: center;
 }
 
-#filter_menu button {
+button {
     cursor: pointer;
     width: 50vw;
     height: 8vw;
@@ -113,7 +113,7 @@ header li {
 
 }
 
-#filter_menu button:hover {
+button:hover {
     background-color: #937AB5;
     color: white;
 
@@ -230,34 +230,81 @@ article {
 
 /*--- Ekstern detalje side ---*/
 
-#detalje_view {
-    display: grid;
-    grid-template-columns: repeat(2, 2fr);
-
-}
 
 #detalje_view img {
     z-index: 1;
-    width: 600px;
-    height: 800px;
-    transition: all 0.5s;
+    width: 100%;
     object-fit: cover;
-    position: relative;
 
 }
 
-#luk,
+#luk {
+    height: 40px;
+    width: 100px;
+    font-size: 1.4em;
+    margin-top: 20px;
+}
+
 #til_kurv {
-    cursor: pointer;
-    width: 10vw;
-    height: 7vw;
-    margin: 1vw;
-    font-family: titillium-web, sans-serif;
-    font-weight: 300;
-    font-size: 1rem;
-    border-color: #937AB5;
+    position: relative;
+    left: 20%;
+    margin-bottom: 30px;
+    background-color: #937AB5;
+    color: white;
+    font-size: 1.4em;
 }
 
+.slideshow-container {
+    position: relative;
+}
+
+.prev {
+    cursor: pointer;
+    position: absolute;
+    width: auto;
+    top: 350px;
+    left: 420px;
+    padding: 16px;
+    transition: 0.6s ease;
+    font-weight: bold;
+    font-size: 40px;
+    user-select: none;
+    color: white;
+    z-index: 1;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover {
+    background-color: #937AB5;
+    opacity: 0.7;
+}
+
+.dot_container {
+    position: relative;
+    left: 45%;
+    top: -360px;
+}
+
+.tekst {
+    position: relative;
+    top: 10vw;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #CDB6DD;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #937AB5;
+}
 
 /*---Ekstern detalje side - Slut---*/
 
@@ -339,7 +386,7 @@ footer {
         margin-top: 2vw;
     }
 
-    #filter_menu button {
+    button {
         width: 100px;
         height: 28px;
         font-size: 1rem;
@@ -374,6 +421,46 @@ footer {
     .gavekort2 {
         margin: 1vw;
         width: 400px;
+    }
+
+    #detalje_view {
+        display: grid;
+        grid-template-columns: repeat(2, 2fr);
+
+    }
+
+    #detalje_view img {
+        width: 600px;
+        height: 800px;
+
+
+    }
+
+    .prev {
+        top: 70%;
+        font-size: 40px;
+        left: 550px;
+    }
+
+    .prev:hover {
+        background-color: #937AB5;
+        opacity: 0.7;
+    }
+
+    .dot_container {
+        left: 22%;
+        top: -40px;
+    }
+
+    .tekst {
+        top: 0;
+    }
+
+    #til_kurv {
+        width: 150px;
+        height: 40px;
+        left: 0;
+        margin: 0;
     }
 
 }
