@@ -40,7 +40,7 @@ section {
     width: 10%;
 }
 
-.logo_stort {
+.logo_stor {
     display: none;
 }
 
@@ -310,16 +310,16 @@ article {
 
 /*---om  side - start ---*/
 
-#info .sectionwrapper{
+#info .sectionwrapper {
     margin-right: 20vw;
     margin-left: 20vw;
     word-spacing: 2px;
 }
 
-#info h1{
+#info h1 {
     border-bottom: #937AB5 2px solid;
     font-family: titillium-web, sans-serif;
-        font-weight: 300;
+    font-weight: 300;
     font-style: normal;
 }
 
