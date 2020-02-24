@@ -34,10 +34,10 @@ section {
 .logo_lille {
     display: block;
     position: absolute;
-    top: 0.5vw;
+    top: 1vw;
     left: 1vw;
     margin: 0;
-    width: 10%;
+    width: 25vw;
 }
 
 .logo_stor {
@@ -56,6 +56,7 @@ section {
     display: inline-block;
     color: black;
     margin: 0.6rem;
+    font-size: 2rem;
 }
 
 #menu {
@@ -381,6 +382,7 @@ footer {
 
     .logo_lille {
         display: none;
+
     }
 
     .logo_stor {
