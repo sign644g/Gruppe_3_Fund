@@ -103,8 +103,8 @@ header li {
 
 button {
     cursor: pointer;
-    width: 50vw;
-    height: 8vw;
+    width: 250px;
+    height: 40px;
     margin: 1vw;
     font-family: titillium-web, sans-serif;
     font-weight: 300;
@@ -262,8 +262,8 @@ article {
     cursor: pointer;
     position: absolute;
     width: auto;
-    top: 350px;
-    left: 420px;
+    top: 75vw;
+    right: 3vw;
     padding: 16px;
     transition: 0.6s ease;
     font-weight: bold;
@@ -280,14 +280,7 @@ article {
 }
 
 .dot_container {
-    position: relative;
-    left: 45%;
-    top: -360px;
-}
-
-.tekst {
-    position: relative;
-    top: 10vw;
+    text-align: center;
 }
 
 .dot {
@@ -441,33 +434,20 @@ footer {
         width: 400px;
     }
 
-    #detalje_view {
-        display: grid;
-        grid-template-columns: repeat(2, 2fr);
+    .prev {
+        top: 75vw;
+        font-size: 3em;
+    }
 
+}
+
+@media only screen and (min-width: 1000px) {
+    .kurv {
+        width: 3vw;
     }
 
     #detalje_view img {
-        width: 600px;
         height: 800px;
-
-
-    }
-
-    .prev {
-        top: 70%;
-        font-size: 40px;
-        left: 550px;
-    }
-
-    .prev:hover {
-        background-color: #937AB5;
-        opacity: 0.7;
-    }
-
-    .dot_container {
-        left: 22%;
-        top: -40px;
     }
 
     .tekst {
@@ -481,10 +461,14 @@ footer {
         margin: 0;
     }
 
-}
+    .prev {
+        right: 54vw;
+        top: 35vw;
+    }
 
-@media only screen and (min-width: 1000px) {
-    .kurv {
-        width: 3vw;
+    #detalje_view {
+        display: grid;
+        grid-template-columns: repeat(2, 2fr);
+        column-gap: 2rem;
     }
 }
