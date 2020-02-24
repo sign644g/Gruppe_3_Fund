@@ -25,6 +25,17 @@ section {
 
 /*--- fælles designregler for alle sektioner SLUT ---*/
 
+/*---Splash---*/
+
+#splashbilleder {
+    height: 100vh;
+    object-fit: cover;
+    object-position: 50% 10%;
+}
+
+/*---Splash SLut---*/
+
+
 /*---Header - burgermenu---*/
 
 .kurv {
@@ -317,8 +328,10 @@ article {
     font-style: normal;
 }
 
-#info .indhold, .indhold1, .indhold2{
-     padding: 10px;
+#info .indhold,
+.indhold1,
+.indhold2 {
+    padding: 10px;
 }
 
 /*---om  side - slut ---*/

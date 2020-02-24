@@ -51,7 +51,7 @@
     </header>
 
     <section id="splash">
-        <img name="slide">
+        <img name="slide" id="splashbilleder">
     </section>
 
     <script>
@@ -63,9 +63,9 @@
 
         // billede visning
 
-        image[0] ='img/splash/roed_skaal_1.png';
-        image[1] ='img/splash/boobies_1.png';
-        image[2] ='img/splash/bordallo_1.png';
+        image[0] = 'img/splash/roed_skaal_1.png';
+        image[1] = 'img/splash/boobies_1.png';
+        image[2] = 'img/splash/bordallo_1.png';
 
 
 
@@ -82,6 +82,7 @@
             }
 
             setTimeout("skiftImg()", time);
+
         }
 
         document.addEventListener("DOMContentLoaded", sidenVises)
@@ -89,6 +90,7 @@
         function sidenVises() {
             console.log("sidenVises");
             window.onload = skiftImg;
+
             document.querySelector("#menuknap").addEventListener("click", toggleMenu);
 
         }
@@ -106,9 +108,6 @@
                 document.querySelector("#menuknap").textContent = "X";
             }
         }
-
     </script>
 
-</body>
-
-</html>
+</body></html>
