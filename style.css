@@ -316,6 +316,10 @@ article {
     font-style: normal;
 }
 
+#info .indhold, .indhold1, .indhold2{
+     padding: 10px;
+}
+
 /*---om  side - slut ---*/
 
 /*--- Footer---*/
