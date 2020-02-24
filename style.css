@@ -387,6 +387,7 @@ footer {
     }
 
     .logo_stor {
+        display: block;
         width: 10vw;
         height: 5vh;
     }
