@@ -31,9 +31,9 @@
                     <img src="img/logo_lille.svg" alt="Fund´s logo lille">
                 </a>
             </div>
-
+            <!--Burgermenu der vises på mobile-view-->
             <div id="menuknap">☰</div>
-
+            <!--menuen er lavet som den ser ud når den er synlig, men burgermenu skjules af en class. -->
             <ul id="menu" class="hidden">
                 <li><a href="service.html">Service</a></li>
                 <li><a class="tryk" href="interior.html">Interiør</a></li>
@@ -42,13 +42,13 @@
                 <li> <a href="gavekort.html">Gavekort</a></li>
             </ul>
 
-            <!--           tilføj til kurv icon tilføjes-->
             <div class="kurv">
                 <a href=""><img src="img/kurv.svg" alt="Kurv ikon"></a>
             </div>
         </nav>
     </header>
 
+    <!--   filtreringsknapper med data attributter-->
     <nav id="filter_menu">
         <button class="filter valgt" data-kategori="interiør">Alle</button>
         <button class="filter" data-kategori="skaale">Skåle</button>
@@ -62,7 +62,9 @@
     <h1></h1>
 
     <section id="item_view">
+        <!--       tom container til alle varerne-->
         <section class="data-container"></section>
+        <!--        indeholdet af template tag er html skabelon for de enkelte varer-->
         <template>
             <article class="alleItems">
                 <div class="billederne">
@@ -88,7 +90,6 @@
             <div class="indhold">
                 <h3>Følg med:</h3>
                 <p>Instagram: @fund<br>Facebook: Fund_genbrug</p>
-                <!--                facebook og insta ikoner tilføjes-->
                 <div class="ikoner">
                     <a href="instagram.com"><img src="img/ig.svg" alt="instagram"></a>
                     <a href="facebook.com"><img src="img/fb.svg" alt="facebook"></a>
@@ -113,6 +114,7 @@
 
         }
 
+        //json data hentes ind og sendes videre til funktionen visItems
         async function loadData() {
             const response = await fetch(endpoint);
 
@@ -123,16 +125,23 @@
             visItems();
         }
 
-        function visItems() {
-            const listevisning = document.querySelector(".data-container");
-            const template = document.querySelector("template");
 
+        //visItems sætter hver enkelt ret ind i html
+        function visItems() {
+
+            const listevisning = document.querySelector(".data-container"); //container til articles med varer
+
+            const template = document.querySelector("template"); //select indhold af html skabelon=article
+
+            //html containeren tømmes når der fyldes nyt indhold i den.
             listevisning.innerHTML = "";
 
+            //array´et varer løbes igennem og hver ret indsætten i html.
             varer.feed.entry.forEach(ting => {
                 if (filter == "alle" || filter == ting.gsx$kategori.$t || filter == ting.gsx$underkategori.$t) {
 
 
+                    //html template klones og fyldes ud med inhold.
                     let klon = template.cloneNode(true).content;
 
                     klon.querySelector(".billede1").src = "img/interior/" + ting.gsx$billede1.$t;
@@ -141,10 +150,13 @@
                     klon.querySelector("#navn").textContent = ting.gsx$navn.$t;
                     klon.querySelector("#pris").textContent = ting.gsx$pris.$t;
                     klon.querySelector("#status").textContent = ting.gsx$status.$t;
+
+                    //henviser til ekstern detaljeside når der klikkes på den enkelte vare.
                     klon.querySelector(".alleItems").addEventListener("click", () => {
                         location.href = "detalje.html?id=" + ting.gsx$id.$t;
                     });
 
+                    //klonen tilføjes til DOM.
                     listevisning.appendChild(klon);
 
 
@@ -153,15 +165,14 @@
 
         }
 
-
+        //funktion som lægger eventlistener på alle filtreringskanpper.
         function filterButtons() {
-
             document.querySelectorAll(".filter").forEach(elm => {
                 elm.addEventListener("click", filtrering);
             })
         }
 
-
+        //funktion der filtrerer indholdet på undersiderne, alt efter hvilken knap der er klikket på.
         function filtrering() {
             filter = this.dataset.kategori;
             document.querySelectorAll(".filter").forEach(elm => {
@@ -175,16 +186,19 @@
 
         function sidenVises() {
             console.log("sidenVises");
+            //lytte efter klik på menuknap
             document.querySelector("#menuknap").addEventListener("click", toggleMenu);
         }
 
-        //funktion til burgermenu
+        //Når der så bliver klikket, så toggle(skifte fra en til nogen andet) den class på menuen, der skjuler den.
         function toggleMenu() {
             console.log("toggleMenu");
             document.querySelector("#menu").classList.toggle("hidden");
 
+            //let variablen definere hvis menuen er skjult indeholder den class hidden
             let erSkjult = document.querySelector("#menu").classList.contains("hidden");
 
+            //if else sætning med betingelse for textcontent, som udskriver noget i html
             if (erSkjult == true) {
                 document.querySelector("#menuknap").textContent = "☰";
             } else {

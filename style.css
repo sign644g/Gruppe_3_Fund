@@ -1,5 +1,4 @@
 /*--- Genrelle indstillinger---*/
-
 @import url("https://use.typekit.net/dms1wcw.css");
 
 * {
@@ -18,7 +17,6 @@ img {
 /*--- Genrelle indstillinger SLUT ---*/
 
 /*--- fælles designregler for alle sektioner ---*/
-
 section {
     margin: 0 auto;
 }
@@ -26,7 +24,6 @@ section {
 /*--- fælles designregler for alle sektioner SLUT ---*/
 
 /*---Splash---*/
-
 #splashbilleder {
     height: 100vh;
     object-fit: cover;
@@ -37,15 +34,19 @@ section {
 
 
 /*---Header - burgermenu---*/
-
 .kurv {
-    display: none;
+    position: absolute;
+    display: inline-block;
+    top: 1.4vw;
+    right: 8vw;
+    margin: 0.5rem;
+    width: 10vw;
 }
 
 .logo_lille {
     display: block;
     position: absolute;
-    top: 1vw;
+    top: 0;
     left: 1vw;
     margin: 0;
     width: 15vw;
@@ -141,8 +142,6 @@ button:hover {
 
 article {
     margin: 2vw;
-
-
 }
 
 #item_view {
@@ -177,13 +176,6 @@ article {
     background-color: #937AB5;
     color: white;
 }
-
-
-/*#alleItems img:hover {
-    z-index: 1;
-    transform: scale(1.1);
-
-}*/
 
 .alleItems h3,
 .gavekort h3 {
@@ -223,7 +215,6 @@ article {
 }
 
 .billede1:hover {
-    /*    display: none;*/
     opacity: 0;
 }
 
@@ -241,8 +232,6 @@ article {
 /*---css grid og indhold - Slut---*/
 
 /*--- Ekstern detalje side ---*/
-
-
 #detalje_view img {
     z-index: 1;
     width: 100%;
@@ -337,8 +326,6 @@ article {
 /*---om  side - slut ---*/
 
 /*--- Footer---*/
-
-
 footer {
     border-top: 0.2rem solid #937AB5;
     font-size: 1.2em;
