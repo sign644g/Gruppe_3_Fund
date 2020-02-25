@@ -35,13 +35,18 @@ section {
 
 /*---Header - burgermenu---*/
 .kurv {
-    display: none;
+    position: absolute;
+    display: inline-block;
+    top: 1.4vw;
+    right: 8vw;
+    margin: 0.5rem;
+    width: 10vw;
 }
 
 .logo_lille {
     display: block;
     position: absolute;
-    top: 1vw;
+    top: 0;
     left: 1vw;
     margin: 0;
     width: 15vw;

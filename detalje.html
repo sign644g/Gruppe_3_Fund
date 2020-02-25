@@ -31,9 +31,9 @@
                     <img src="img/logo_lille.svg" alt="Fund´s logo lille">
                 </a>
             </div>
-
+            <!--Burgermenu der vises på mobile-view-->
             <div id="menuknap">☰</div>
-
+            <!--menuen er lavet som den ser ud når den er synlig, men burgermenu skjules af en class. -->
             <ul id="menu" class="hidden">
                 <li><a href="service.html">Service</a></li>
                 <li><a href="interior.html">Interiør</a></li>
@@ -42,7 +42,6 @@
                 <li> <a href="gavekort.html">Gavekort</a></li>
             </ul>
 
-            <!--           tilføj til kurv icon tilføjes-->
             <div class="kurv">
                 <a href=""><img src="img/kurv.svg" alt="Kurv ikon"></a>
             </div>
@@ -88,7 +87,6 @@
             <div class="indhold">
                 <h3>Følg med:</h3>
                 <p>Instagram: @fund<br>Facebook: Fund_genbrug</p>
-                <!--                facebook og insta ikoner tilføjes-->
                 <div class="ikoner">
                     <a href="instagram.com"><img src="img/ig.svg" alt="instagram"></a>
                     <a href="facebook.com"><img src="img/fb.svg" alt="facebook"></a>
@@ -153,20 +151,23 @@
             history.back();
         }
 
-
-
         function sidenVises() {
             console.log("sidenVises");
+
+            //lytte efter klik på menuknap
             document.querySelector("#menuknap").addEventListener("click", toggleMenu);
         }
 
-        //funktion til burgermenu
+        //Når der så bliver klikket, så toggle(skifte fra en til nogen andet) den class på menuen, der skjuler den.
         function toggleMenu() {
             console.log("toggleMenu");
             document.querySelector("#menu").classList.toggle("hidden");
 
+            //let variablen definere hvis menuen er skjult indeholder den class hidden
+
             let erSkjult = document.querySelector("#menu").classList.contains("hidden");
 
+            //if else sætning med betingelse for textcontent, som udskriver noget i html
             if (erSkjult == true) {
                 document.querySelector("#menuknap").textContent = "☰";
             } else {
