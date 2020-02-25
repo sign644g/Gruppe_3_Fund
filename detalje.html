@@ -174,13 +174,17 @@
             }
         }
 
+        //Lave statisk slideshow --> https://www.w3schools.com/howto/howto_js_slideshow.asp
+
         var slideIndex = 1;
         showSlides(slideIndex);
 
+        //Visning af nyt billede ved klik på pil
         function plusSlides(n) {
             showSlides(slideIndex += n);
         }
 
+        //Visning af startbilledet + kontrol af de små prikker i bunden
         function currentSlide(n) {
             showSlides(slideIndex = n);
         }
