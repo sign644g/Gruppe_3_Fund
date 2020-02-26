@@ -70,11 +70,22 @@
         function sidenVises() {
             console.log("sidenVises");
 
-
             window.onload = skiftImg;
 
             //lytte efter klik på menuknap
             document.querySelector("#menuknap").addEventListener("click", toggleMenu);
+        }
+
+        function skiftImg() {
+            document.slide.src = image[i];
+
+            if (i < image.length - 1) {
+                i++;
+            } else {
+                i = 0;
+            }
+
+            setTimeout("skiftImg()", time);
         }
 
         //Når der så bliver klikket, så toggle(skifte fra en til nogen andet) den class på menuen, der skjuler den.
@@ -94,22 +105,6 @@
             }
         }
 
-<<<<<<< HEAD
-        //skift billede
-        function skiftImg() {
-            document.slide.src = image[i];
-
-            if (i < image.length - 1) {
-                i++;
-            } else {
-                i = 0;
-            }
-
-            setTimeout("skiftImg()", time);
-        }
-
-=======
->>>>>>> origin/master
     </script>
 
 </body>
