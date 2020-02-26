@@ -35,12 +35,11 @@
             <div id="menuknap">☰</div>
             <!--menuen er lavet som den ser ud når den er synlig, men burgermenu skjules af en class. -->
             <ul id="menu" class="hidden">
-                <li><a class="filter" data-kategori="service" href="service.html">Service</a></li>
-                <li><a class="filter" data-kategori="interiør" href="interior.html">Interiør</a></li>
-                <li> <a href="startside.html"><img class="logo_stor" src="img/logo_stort.svg" alt="Fund´s logo stort"> </a></li>
-                <li> <a href="om.html">Om os</a></li>
-                <li> <a href="gavekort.html">Gavekort</a></li>
-
+                <li><a href="service.html" data-url="service.html">Service</a></li>
+                <li><a class="tryk" href="interior.html" data-url="interior.html">Interiør</a></li>
+                <li> <a href="startside.html" data-url="startside.html"><img class="logo_stor" src="img/logo_stort.svg" alt="Fund´s logo stort"> </a></li>
+                <li> <a href="om.html" data-url="om.html">Om os</a></li>
+                <li> <a href="gavekort.html" data-url="gavekort.html">Gavekort</a></li>
             </ul>
             <div class="kurv">
                 <a href=""><img src="img/kurv.svg" alt="Kurv ikon"></a>
@@ -95,6 +94,7 @@
             }
         }
 
+<<<<<<< HEAD
         //skift billede
         function skiftImg() {
             document.slide.src = image[i];
@@ -108,6 +108,8 @@
             setTimeout("skiftImg()", time);
         }
 
+=======
+>>>>>>> origin/master
     </script>
 
 </body>

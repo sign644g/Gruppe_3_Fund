@@ -35,14 +35,17 @@
             <div id="menuknap">☰</div>
             <!--menuen er lavet som den ser ud når den er synlig, men burgermenu skjules af en class. -->
             <ul id="menu" class="hidden">
-                <li><a href="service.html">Service</a></li>
-                <li><a href="interior.html">Interiør</a></li>
-                <li> <a href="startside.html"><img class="logo_stor" src="img/logo_stort.svg" alt="Fund´s logo stort"> </a></li>
-                <li> <a href="om.html">Om os</a></li>
-                <li> <a href="gavekort.html">Gavekort</a></li>
+                <li><a href="service.html" data-url="service.html">Service</a></li>
+                <li><a class="tryk" href="interior.html" data-url="interior.html">Interiør</a></li>
+                <li> <a href="startside.html" data-url="startside.html"><img class="logo_stor" src="img/logo_stort.svg" alt="Fund´s logo stort"> </a></li>
+                <li> <a href="om.html" data-url="om.html">Om os</a></li>
+                <li> <a href="gavekort.html" data-url="gavekort.html">Gavekort</a></li>
             </ul>
 
+
             <div class="kurv">
+                <div class="antal_kurv">
+                </div>
                 <a href=""><img src="img/kurv.svg" alt="Kurv ikon"></a>
             </div>
         </nav>
@@ -104,14 +107,27 @@
 
         let varer = [];
 
+        //varablen til "antal" ( varer i kuv)
+        let varer_antal;
+
+
         const detalje = document.querySelector("#detalje");
 
 
         document.addEventListener("DOMContentLoaded", start);
 
         function start() {
+            //antal sættes til 0
+
             sidenVises();
             loadData();
+
+
+            klikVare();
+
+
+            ordenVariabler();
+
 
         }
 
@@ -150,6 +166,46 @@
         function skjulDetalje() {
             history.back();
         }
+
+        function klikVare() {
+
+
+            document.querySelector("#til_kurv").addEventListener("click", () => {
+
+                varer_antal = (isNaN(varer_antal) || varer_antal == undefined || varer_antal <= 0) ? varer_antal = 0 : varer_antal = varer_antal;
+                let AllURL = "?";
+
+                //tæl en op på antal
+                varer_antal++;
+
+                AllURL += "varer_antal=" + varer_antal;
+
+                history.replaceState({}, document.title, AllURL);
+
+
+                //Udskriver at man er i denne funktion i consolen
+                console.log("klikVare", varer_antal);
+
+                ordenVariabler();
+
+            });
+        }
+
+        function ordenVariabler() {
+            const urlParams = new URLSearchParams(window.location.search);
+
+            //if else sætning
+            varer_antal = (urlParams.has("varer_antal")) ? urlParams.get("varer_antal") : 0;
+
+            document.querySelectorAll("#menu a").forEach(a => {
+                a.href = a.dataset.url + "?varer_antal=" + varer_antal;
+            });
+
+            //udskriv antal i html
+            document.querySelector(".antal_kurv").textContent = varer_antal;
+
+        }
+
 
         function sidenVises() {
             console.log("sidenVises");
@@ -211,9 +267,6 @@
             slides[slideIndex - 1].style.display = "block";
             dots[slideIndex - 1].className += " active";
         }
-
     </script>
 
-</body>
-
-</html>
+</body></html>

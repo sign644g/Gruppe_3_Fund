@@ -37,10 +37,16 @@ section {
 .kurv {
     position: absolute;
     display: inline-block;
-    top: 1.4vw;
+    top: 0.8vw;
     right: 8vw;
     margin: 0.5rem;
     width: 10vw;
+    height: 5vh;
+}
+
+.antal_kurv {
+    position: absolute;
+    color: purple;
 }
 
 .logo_lille {
