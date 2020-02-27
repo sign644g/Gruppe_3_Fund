@@ -59,16 +59,23 @@
         var image = [];
         var time = 3000;
 
-        document.addEventListener("DOMContentLoaded", sidenVises)
-
-
         // billede visning
         image[0] = 'img/splash/roed_skaal_1.png';
         image[1] = 'img/splash/boobies_1.png';
         image[2] = 'img/splash/bordallo_1.png';
 
+        document.addEventListener("DOMContentLoaded", sidenVises)
 
-        //skift billede
+
+        function sidenVises() {
+            console.log("sidenVises");
+
+            window.onload = skiftImg;
+
+            //lytte efter klik på menuknap
+            document.querySelector("#menuknap").addEventListener("click", toggleMenu);
+        }
+
         function skiftImg() {
             document.slide.src = image[i];
 
@@ -79,14 +86,6 @@
             }
 
             setTimeout("skiftImg()", time);
-        }
-
-        function sidenVises() {
-            console.log("sidenVises");
-            window.onload = skiftImg;
-
-            //lytte efter klik på menuknap
-            document.querySelector("#menuknap").addEventListener("click", toggleMenu);
         }
 
         //Når der så bliver klikket, så toggle(skifte fra en til nogen andet) den class på menuen, der skjuler den.

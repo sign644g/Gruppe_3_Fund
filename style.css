@@ -333,9 +333,7 @@ article {
     font-style: normal;
 }
 
-#info .indhold,
-.indhold1,
-.indhold2 {
+#info .indhold {
     padding: 10px;
 }
 
@@ -453,8 +451,7 @@ footer {
         cursor: pointer;
     }
 
-    .gavekort1,
-    .gavekort2 {
+    .gavekortet {
         margin: 1vw;
         width: 400px;
     }
