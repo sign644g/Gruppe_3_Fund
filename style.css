@@ -119,6 +119,7 @@ header nav a:hover {
 
 header li {
     text-align: center;
+    padding-bottom: 0.5rem;
 }
 
 /*---Header - burgermenu SLUT---*/
@@ -173,11 +174,6 @@ article {
 }
 
 .alleItems img {
-    /*
-    width: 400px;
-    height: 267px;
-    object-fit: contain;
-*/
     z-index: 1;
     width: 100%;
     transition: all 0.5s;
@@ -219,7 +215,9 @@ article {
 }
 
 .data-container {
+    /*definere html elemtet som grid-container*/
     display: grid;
+    /*angiver bredden og antal af kolonner */
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 5px;
     margin: 10px;
