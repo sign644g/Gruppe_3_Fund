@@ -101,6 +101,7 @@
     <script>
         const endpoint = "https://spreadsheets.google.com/feeds/list/1bzIQBLs8Mo3pBGwl4HYI-KxXMqAFf4WwoNaNOwZ5d6M/od6/public/values?alt=json";
 
+        //objects i array
         let varer = [];
 
         let filter = "service";
@@ -122,11 +123,12 @@
             let varer_antal = (urlParams.has("varer_antal")) ? urlParams.get("varer_antal") : 0;
             console.log(urlParams, varer_antal);
 
-            //for hvert a henter den det der står foruden i datasæt, og ligger derefter antal til
+            //for hvert a henter den det der står foruden i datasættet, og ligger derefter antal til
             document.querySelectorAll("#menu a").forEach(a => {
                 a.href = a.dataset.url + "?varer_antal=" + varer_antal;
             });
 
+            //udskriver antal der er lagt i kurv i html
             document.querySelector(".antal_kurv").textContent = varer_antal;
 
         }

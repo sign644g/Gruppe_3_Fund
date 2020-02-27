@@ -117,17 +117,11 @@
         document.addEventListener("DOMContentLoaded", start);
 
         function start() {
-            //antal sættes til 0
-
             sidenVises();
             loadData();
-
-
-            klikVare();
-
-
             ordenVariabler();
 
+            document.querySelector("#til_kurv").addEventListener("click", klikVare);
 
         }
 
@@ -169,26 +163,21 @@
 
         function klikVare() {
 
+            varer_antal = (isNaN(varer_antal) || varer_antal == undefined || varer_antal <= 0) ? varer_antal = 0 : varer_antal = varer_antal;
+            let AllURL = "?";
 
-            document.querySelector("#til_kurv").addEventListener("click", () => {
+            //tæl en op på antal
+            varer_antal++;
 
-                varer_antal = (isNaN(varer_antal) || varer_antal == undefined || varer_antal <= 0) ? varer_antal = 0 : varer_antal = varer_antal;
-                let AllURL = "?";
+            AllURL += "varer_antal=" + varer_antal;
 
-                //tæl en op på antal
-                varer_antal++;
-
-                AllURL += "varer_antal=" + varer_antal;
-
-                history.replaceState({}, document.title, AllURL);
+            history.replaceState({}, document.title, AllURL);
 
 
-                //Udskriver at man er i denne funktion i consolen
-                console.log("klikVare", varer_antal);
+            //Udskriver at man er i denne funktion i consolen
+            console.log("klikVare", varer_antal);
 
-                ordenVariabler();
-
-            });
+            ordenVariabler();
         }
 
         function ordenVariabler() {
@@ -220,7 +209,6 @@
             document.querySelector("#menu").classList.toggle("hidden");
 
             //let variablen definere hvis menuen er skjult indeholder den class hidden
-
             let erSkjult = document.querySelector("#menu").classList.contains("hidden");
 
             //if else sætning med betingelse for textcontent, som udskriver noget i html
@@ -267,6 +255,9 @@
             slides[slideIndex - 1].style.display = "block";
             dots[slideIndex - 1].className += " active";
         }
+
     </script>
 
-</body></html>
+</body>
+
+</html>
