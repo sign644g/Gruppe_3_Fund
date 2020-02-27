@@ -46,7 +46,15 @@ section {
 
 .antal_kurv {
     position: absolute;
-    color: purple;
+    right: 2.5vw;
+    color: white;
+    font-family: titillium-web, sans-serif;
+    font-size: 1rem;
+    background-color: #937AB5;
+    text-align: center;
+    padding: 0 0.4rem;
+    border-radius: 10px;
+
 }
 
 .logo_lille {
@@ -81,6 +89,7 @@ section {
     list-style-type: none;
     transition: transform .3s;
     width: 100%;
+    box-shadow: 0 4px 2px -2px rgba(147, 122, 181, 0.37);
 }
 
 header {
@@ -94,6 +103,7 @@ header nav {
     flex-wrap: wrap;
     flex-direction: column;
     align-items: flex-end;
+
 }
 
 header nav a {
@@ -341,7 +351,6 @@ footer {
 #oplysninger {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    /*grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));*/
     padding: 1em 4em;
 }
 
@@ -355,6 +364,10 @@ footer {
     width: 20%;
 }
 
+/*--- Footer - slut---*/
+
+/*-----GAVEKORT------*/
+
 .gavekort img:hover {
     opacity: 0.5;
 }
@@ -365,7 +378,7 @@ footer {
 
 /*-----GAVEKORT------*/
 
-/*--- Footer - slut---*/
+
 
 /*--- Media QUeries ---*/
 
@@ -374,6 +387,7 @@ footer {
     #menu {
         text-align: center;
         justify-content: space-between;
+        box-shadow: none;
     }
 
     #menuknap {
@@ -427,7 +441,6 @@ footer {
 
     #oplysninger {
         justify-items: center;
-        /*        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));*/
         grid-template-columns: repeat(2, 2fr);
     }
 
