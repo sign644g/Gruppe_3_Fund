@@ -147,7 +147,7 @@
         }
 
 
-        //visItems sætter hver enkelt ret ind i html
+        //visItems sætter hver enkelt ting ind i html
         function visItems() {
 
             const listevisning = document.querySelector(".data-container"); //container til articles med varer
@@ -157,7 +157,7 @@
             //html containeren tømmes når der fyldes nyt indhold i den.
             listevisning.innerHTML = "";
 
-            //array´et varer løbes igennem og hver ret indsætten i html.
+            //array´et varer løbes igennem og hver ting indsætten i html.
             varer.feed.entry.forEach(ting => {
                 if (filter == "alle" || filter == ting.gsx$kategori.$t || filter == ting.gsx$underkategori.$t) {
 
